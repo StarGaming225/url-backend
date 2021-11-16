@@ -1,10 +1,12 @@
 from flask import Flask, request, jsonify
 from flask_redis import FlaskRedis
+from flask_cors import CORS
 
 import random
 import string
 
 app = Flask(__name__)
+CORS(app)
 redis_client = FlaskRedis(app)
 
 @app.route('/url/add', methods=["POST"])
